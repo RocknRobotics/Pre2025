@@ -37,6 +37,7 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     //Test comment
+    //Test comment 2
     rioNetworkClient = NetworkTableInstance.getDefault();
     rioNetworkClient.startClient4("rioClient");
     rioNetworkClient.setServer("10.36.92.2", NetworkTableInstance.kDefaultPort4);
