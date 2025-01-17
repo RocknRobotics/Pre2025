@@ -3,11 +3,11 @@
 1. Motor id
 2. Soft limits (degrees) for the minimum and maximum rotation
 3. Absolute encoder id
-4. Preset enum for:
-    -L1, L2, L3, L4
-    -Algae off floor, off coral, off first branch, off second branch
-    -Processor scoring
-    -Intaking from coral station
+4. Preset enum for:\
+    -L1, L2, L3, L4\
+    -Algae off floor, off coral, off first branch, off second branch\
+    -Processor scoring\
+    -Intaking from coral station\
     -Soft limit minimum/maximum
 
 ## Master:
