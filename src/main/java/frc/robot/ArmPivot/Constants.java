@@ -1,12 +1,12 @@
 package frc.robot.ArmPivot;
 
 public final class Constants {
-    final int motorId = 0;
-    final double minRotation = -30;
-    final double maxRotation = 30;
-    final int absoluteEncoderId = 0;
+    static final int motorId = 0;
+    static final double minRotation = -30;
+    static final double maxRotation = 30;
+    static final int absoluteEncoderId = 0;
 
-    enum presetIndex {
+    static enum presetIndex {
         L1,
         L2,
         L3,
@@ -21,7 +21,7 @@ public final class Constants {
         SoftLimitMax
     }
 
-    final double [] presets = {
+    static final double [] presets = {
         0, //L1
         0, //L2
         0, //L3
