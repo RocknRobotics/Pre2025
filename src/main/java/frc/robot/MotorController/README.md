@@ -2,5 +2,5 @@
 ## Constants:
 1. 
 
-## Master:
+## Controller:
 1. 
