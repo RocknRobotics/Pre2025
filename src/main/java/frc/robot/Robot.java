@@ -36,23 +36,6 @@ public class Robot extends TimedRobot {
   //-----------------------------------------------------------------------------------------------------------------------------------
   @Override
   public void robotInit() {
-    //Test comment
-    //Test comment 2
-    rioNetworkClient = NetworkTableInstance.getDefault();
-    rioNetworkClient.startClient4("rioClient");
-    rioNetworkClient.setServer("10.36.92.2", NetworkTableInstance.kDefaultPort4);
-    SmartDashboard.setNetworkTableInstance(rioNetworkClient);
-
-    Determinables.construct();
-
-    myArmMaster = new ArmMaster(rioNetworkClient);
-    mySwerveMaster = new SwerveMaster(rioNetworkClient);
-    myHookMaster = new HookMaster(rioNetworkClient);
-
-    swerveTranslationalFactor = 1d;
-    swerveRotationalFactor = 1d;
-    armAngleFactor = 0.5d;
-    armFireFactor = 0.35d;
   }
 
   //20 ms
@@ -62,13 +45,6 @@ public class Robot extends TimedRobot {
   //-----------------------------------------------------------------------------------------------------------------------------------
   @Override
   public void robotPeriodic() {
-    SmartDashboard.putNumber("LU Angle: ", mySwerveMaster.mySwerveModules[0].getAbsoluteModuleAngle());
-    SmartDashboard.putNumber("LD Angle: ", mySwerveMaster.mySwerveModules[1].getAbsoluteModuleAngle());
-    SmartDashboard.putNumber("RU Angle: ", mySwerveMaster.mySwerveModules[2].getAbsoluteModuleAngle());
-    SmartDashboard.putNumber("RD Angle: ", mySwerveMaster.mySwerveModules[3].getAbsoluteModuleAngle());
-    SmartDashboard.putNumber("Arm Angle: ", myArmMaster.myArmAngler.getAbsoluteAngle());
-    SmartDashboard.putNumber("Pigeon Angle: ", mySwerveMaster.myPigeon.getAngle());
-    //SmartDashboard.putNumber("Pigeon Yaw: ", mySwerveMaster.myPigeon.getYaw().getValueAsDouble());
   }
 
   //-----------------------------------------------------------------------------------------------------------------------------------
@@ -77,8 +53,6 @@ public class Robot extends TimedRobot {
   //-----------------------------------------------------------------------------------------------------------------------------------
   @Override
   public void autonomousInit() {
-    //Falls back to blue if there is no valid alliance or the DS is not connected
-    Determinables.construct();
   }
 
   //-----------------------------------------------------------------------------------------------------------------------------------
@@ -102,9 +76,6 @@ public class Robot extends TimedRobot {
   //-----------------------------------------------------------------------------------------------------------------------------------
   @Override
   public void teleopPeriodic() {
-    mySwerveMaster.teleopUpdate();
-    myArmMaster.teleopUpdate();
-    myHookMaster.teleopUpdate();
   }
 
   //-----------------------------------------------------------------------------------------------------------------------------------
@@ -120,9 +91,6 @@ public class Robot extends TimedRobot {
   //-----------------------------------------------------------------------------------------------------------------------------------
   @Override
   public void disabledPeriodic() {
-    myArmMaster.stop();
-    mySwerveMaster.stop();
-    myHookMaster.stop();
   }
 
   //-----------------------------------------------------------------------------------------------------------------------------------
