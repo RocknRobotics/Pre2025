@@ -4,13 +4,7 @@
 
 package frc.robot;
 
-import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.TimedRobot;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.robot.Arm.ArmMaster;
-import frc.robot.Hook.HookMaster;
-import frc.robot.Swerve.SwerveMaster;
-import frc.robot.Values.Determinables;
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -19,16 +13,6 @@ import frc.robot.Values.Determinables;
  * project.
  */
 public class Robot extends TimedRobot {
-  public static NetworkTableInstance rioNetworkClient;
-
-  public static ArmMaster myArmMaster;
-  public static SwerveMaster mySwerveMaster;
-  public static HookMaster myHookMaster;
-
-  public static double swerveTranslationalFactor;
-  public static double swerveRotationalFactor;
-  public static double armAngleFactor;
-  public static double armFireFactor;
 
   //-----------------------------------------------------------------------------------------------------------------------------------
   //-----------------------------------------------------------------------------------------------------------------------------------
