@@ -3,20 +3,20 @@ import edu.wpi.first.wpilibj.DigitalInput;
 import frc.robot.MotorController.Controller;
 
 public class Master {
-    Controller algaeController;
-    Controller sharedController;
-    Controller coralController;
+    private Controller algaeController;
+    private Controller sharedController;
+    private Controller coralController;
 
-    DigitalInput coralSwitch;
-    DigitalInput algaeSwitch;
+    private DigitalInput coralSwitch;
+    private DigitalInput algaeSwitch;
 
-    boolean coralState;
-    boolean algaeState;
+    private boolean coralState;
+    private boolean algaeState;
 
     public Master(){
-        algaeController = new Controller();
-        sharedController = new Controller();
-        coralController = new Controller();
+        algaeController = new Controller(Constants.algaeID);
+        sharedController = new Controller(Constants.sharedID);
+        coralController = new Controller(Constants.coralID);
 
         coralSwitch = new DigitalInput(Constants.coralSwitchId);
         algaeSwitch = new DigitalInput(Constants.algaeSwitchId);
@@ -31,9 +31,9 @@ public class Master {
     }
 
     public void setMotorController(double coralMotorSpeed, double algaeMotorSpeed, double sharedMotorSpeed){
-        //algaeController.set(algaeMotorSpeed);
-        //coralController.set(coralMotorSpeed);
-        //sharedController.set(sharedMotorSpeed);
+        algaeController.set(algaeMotorSpeed);
+        coralController.set(coralMotorSpeed);
+        sharedController.set(sharedMotorSpeed);
     }
 
     //change from void
@@ -42,9 +42,9 @@ public class Master {
     }
 
     public void disabledPeriodic(){
-        //algaeController.stop();
-        //coralController.stop();
-        //bothController.stop();
+        algaeController.stopMotor();
+        coralController.stopMotor();
+        sharedController.stopMotor();
     }
 
 

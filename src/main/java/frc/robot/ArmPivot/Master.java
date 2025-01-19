@@ -1,16 +1,12 @@
 package frc.robot.ArmPivot;
 
-//import com.revrobotics.AbsoluteEncoder;
-
 import frc.robot.MotorController.Controller;
 
 public class Master {
     Controller armPivotController;
-    //AbsoluteEncoder armPivotAbsoluteEncoder;
 
     public Master(){
-        armPivotController = new Controller();
-        //armPivotAbsoluteEncoder = new AbsoluteEncoder();
+        armPivotController = new Controller(Constants.motorId);
     }
 
     public void pivot(double targetAngle){
@@ -22,6 +18,6 @@ public class Master {
     }
 
     public void disabledPeriodic(){
-        //armPivotController.stop();
+        armPivotController.stopMotor();
     }
 }
